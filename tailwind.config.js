@@ -2,6 +2,7 @@
 
 import typography from "@tailwindcss/typography"
 import daisyui from "daisyui"
+import flowbite from "flowbite/plugin"
 
 export default {
     content: [
@@ -10,14 +11,24 @@ export default {
         "./resources/**/*.vue",
     ],
     daisyui: {
-        themes: ["light", "dark", "corporate"],
+       themes: ["light", "dark", "corporate", "nord"],
     },
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                teko: ['Teko', 'sans-serif'],
+                poppins: ['Poppins', 'sans-serif'],
+            },
+        },
     },
     plugins: [
         typography,
         daisyui,
+        flowbite({
+            charts: true,
+            forms: true,
+            tooltips: true
+        })
     ],
 }
 
